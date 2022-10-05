@@ -15,6 +15,23 @@ add_action('wp_enqueue_scripts', 'load_stylesheets');
 
 
 
+
+function include_jquery()
+{
+
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery-3.1.3.min.js', '', 1, true);
+
+    add_action('wp_enqueue_scripts', 'jquery');
+
+}
+
+add_action('wp_enqueue_scripts', 'include_jquery');
+
+
+
+
+
 function loadjs()
 {
 
